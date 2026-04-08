@@ -19,7 +19,7 @@ To use this starter project, you shall:
 ## Optional Prerequisites
 
 The starter project may run with a H2 in memory database for testing purposes. If you want to run the server with a 
-database, a PostgreSQL database server (or any other database supported by HAPI FHIR JPA Server) shall run locally 
+persistent database, a PostgreSQL database server (or any other database supported by HAPI FHIR JPA Server) shall run locally 
 and must be configured in the _application.yaml_ file (see below). 
 
 ## Local build 
