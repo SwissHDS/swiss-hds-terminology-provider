@@ -39,14 +39,6 @@ The local build option is currently the only option to run the server. To build 
 
 The easiest way to run this server entirely depends on your environment requirements. The following ways are supported:
 
-### Using jetty
-
-```bash
-mvn -Pjetty spring-boot:run
-```
-
-The Server will be accessible at http://localhost:8080/fhir and the CapabilityStatement will be found at http://localhost:8080/fhir/metadata.
-
 ### Using Spring Boot
 
 ```bash
@@ -64,7 +56,20 @@ server:
   port: 8888
 ```
 
-## Deploy with docker compose
+### Using jetty
+
+```bash
+mvn -Pjetty spring-boot:run
+```
+
+The Server will be accessible at http://localhost:8080/fhir and the CapabilityStatement will be found at http://localhost:8080/fhir/metadata.
+
+## Running from IntelliJ
+
+Make sure you run with the maven profile called ```boot``` and NOT also ```jetty```. Then you are ready to press debug
+the project directly without any extra Application Servers.
+
+### Deploy with docker compose
 
 Docker compose is a simple option to build and deploy containers. To deploy with docker compose, you should build the project
 with `mvn clean install` and then bring up the containers with `docker-compose up -d --build`. The server can be
@@ -90,11 +95,6 @@ jpa:
 
     # Then comment all hibernate.search.backend.*
 ```
-
-## Running from IntelliJ
-
-Make sure you run with the maven profile called ```boot``` and NOT also ```jetty```. Then you are ready to press debug
-the project directly without any extra Application Servers.
 
 
 ## Configuration
